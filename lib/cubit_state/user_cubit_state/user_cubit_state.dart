@@ -1,3 +1,4 @@
+
 import 'package:equatable/equatable.dart';
 
 abstract class UserCubitState extends Equatable {
@@ -17,13 +18,17 @@ class LoadingState extends UserCubitState {
 }
 
 //=======================================================data loaded state
+// ignore: must_be_immutable
 class DataLoadedState extends UserCubitState {
   List userList = [];
+
+  DataLoadedState({required this.userList});
   @override
   List<Object?> get props => [userList];
 }
 
 //===================================================error state
+// ignore: must_be_immutable
 class ErrorState extends UserCubitState {
   String message;
   ErrorState({required this.message});
